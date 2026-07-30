@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chadcoulter/REDE-Disclosure/schemas/article.schema.json",
+  "title": "Article",
+  "description": "An encyclopedia entry that explains one or more concepts with context, history, examples, and references.",
+  "type": "object",
+  "required": ["type", "id", "title", "created", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "article",
+      "description": "Must be 'article' for all encyclopedia entries."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Globally unique slug identifier using lowercase kebab-case."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The title of the article."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when this article was first created."
+    },
+    "updated": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date of the most recent update."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "review", "published", "archived"],
+      "description": "Lifecycle status of the article."
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "GitHub usernames or names of contributors."
+    },
+    "concepts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "IDs of Concept artifacts referenced in this article."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "Free-form labels for discovery and filtering."
+    },
+    "discussion": {
+      "type": "string",
+      "description": "ID of the primary Discussion artifact anchored to this article."
+    },
+    "references": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "External citations (URLs, paper titles, book references)."
+    }
+  }
+}

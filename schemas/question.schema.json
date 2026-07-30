@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chadcoulter/REDE-Disclosure/schemas/question.schema.json",
+  "title": "Question",
+  "description": "An unresolved observation. Articulates what is unknown or uncertain and drives inquiry.",
+  "type": "object",
+  "required": ["type", "id", "title", "discussion", "created", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "question",
+      "description": "Must be 'question'."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Globally unique slug identifier using lowercase kebab-case."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The question being asked, stated concisely."
+    },
+    "discussion": {
+      "type": "string",
+      "description": "ID of the Discussion this question belongs to."
+    },
+    "stems_from": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "IDs of Observations that motivate this question."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when this question was recorded."
+    },
+    "created_by": {
+      "type": "string",
+      "description": "GitHub username of the contributor who posed this question."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "answered", "withdrawn"],
+      "description": "Lifecycle status of the question."
+    },
+    "answered_by": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "IDs of Hypotheses or Decisions that answer this question."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "Free-form labels for discovery and filtering."
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chadcoulter/REDE-Disclosure/schemas/hypothesis.schema.json",
+  "title": "Hypothesis",
+  "description": "A proposed explanation for one or more observations or questions. A testable claim under investigation.",
+  "type": "object",
+  "required": ["type", "id", "title", "discussion", "created", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "hypothesis",
+      "description": "Must be 'hypothesis'."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Globally unique slug identifier using lowercase kebab-case."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A concise statement of the hypothesis."
+    },
+    "discussion": {
+      "type": "string",
+      "description": "ID of the Discussion this hypothesis belongs to."
+    },
+    "addresses": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "IDs of Questions this hypothesis proposes to answer."
+    },
+    "based_on": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "IDs of Observations this hypothesis draws from."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when this hypothesis was proposed."
+    },
+    "created_by": {
+      "type": "string",
+      "description": "GitHub username of the contributor who proposed this hypothesis."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["proposed", "testing", "supported", "refuted", "accepted"],
+      "description": "Lifecycle status of the hypothesis."
+    },
+    "tested_by": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "IDs of Experiment artifacts that test this hypothesis."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "Free-form labels for discovery and filtering."
+    }
+  }
+}

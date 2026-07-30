@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chadcoulter/REDE-Disclosure/schemas/observation.schema.json",
+  "title": "Observation",
+  "description": "Evidence introduced into a discussion. The raw material from which questions and hypotheses are built.",
+  "type": "object",
+  "required": ["type", "id", "title", "discussion", "evidence_type", "created"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "observation",
+      "description": "Must be 'observation'."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Globally unique slug identifier using lowercase kebab-case."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A short descriptive title summarizing the observation."
+    },
+    "discussion": {
+      "type": "string",
+      "description": "ID of the Discussion this observation belongs to."
+    },
+    "evidence_type": {
+      "type": "string",
+      "enum": ["empirical", "anecdotal", "logical", "computational", "documentary"],
+      "description": "The nature of the evidence."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when this observation was recorded."
+    },
+    "created_by": {
+      "type": "string",
+      "description": "GitHub username of the contributor who recorded this observation."
+    },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "URLs, citations, or references that substantiate this observation."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "Free-form labels for discovery and filtering."
+    }
+  }
+}

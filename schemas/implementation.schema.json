@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chadcoulter/REDE-Disclosure/schemas/implementation.schema.json",
+  "title": "Implementation",
+  "description": "Executable work that puts a Decision into practice.",
+  "type": "object",
+  "required": ["type", "id", "title", "decision", "created", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "implementation",
+      "description": "Must be 'implementation'."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Globally unique slug identifier using lowercase kebab-case."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A descriptive name for this implementation."
+    },
+    "decision": {
+      "type": "string",
+      "description": "ID of the Decision that authorized this implementation."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when this implementation was started."
+    },
+    "created_by": {
+      "type": "string",
+      "description": "GitHub username of the contributor responsible for this implementation."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["proposed", "in-progress", "complete", "abandoned"],
+      "description": "Lifecycle status of the implementation."
+    },
+    "completed": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when this implementation was completed (if applicable)."
+    },
+    "artifacts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "Paths or URLs to the concrete outputs of this implementation."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "Free-form labels for discovery and filtering."
+    }
+  }
+}
