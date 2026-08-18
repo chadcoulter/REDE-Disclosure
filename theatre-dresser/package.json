@@ -1,0 +1,19 @@
+{
+  "name": "theatre-dresser",
+  "version": "0.1.0",
+  "description": "Prompt-driven CSS theme variation service for REDE portals",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

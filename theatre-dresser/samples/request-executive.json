@@ -1,0 +1,5 @@
+{
+  "context": "executive",
+  "prompt": "make it feel premium and understated — muted palette, generous whitespace, sophisticated serif typography, soft shadows, slow elegant transitions",
+  "baseCss": ":root { --accent: #4f46e5; --background: #ffffff; --surface: #f9fafb; --text: #111827; --border: #e5e7eb; }"
+}
