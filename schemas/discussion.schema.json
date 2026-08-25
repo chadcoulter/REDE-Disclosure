@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chadcoulter/REDE-Disclosure/schemas/discussion.schema.json",
+  "title": "Discussion",
+  "description": "A structured conversation thread attached to a Concept or Article.",
+  "type": "object",
+  "required": ["type", "id", "title", "subject", "subject_type", "created", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "discussion",
+      "description": "Must be 'discussion'."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Globally unique slug identifier using lowercase kebab-case."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A short descriptive title for this discussion thread."
+    },
+    "subject": {
+      "type": "string",
+      "description": "ID of the Concept or Article this discussion is anchored to."
+    },
+    "subject_type": {
+      "type": "string",
+      "enum": ["concept", "article"],
+      "description": "Whether the subject is a concept or article."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date when this discussion was opened."
+    },
+    "updated": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date of the most recent activity."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "resolved", "archived"],
+      "description": "Lifecycle status of the discussion."
+    },
+    "resolution": {
+      "type": "string",
+      "description": "ID of the Decision artifact that resolved this discussion (required when status is 'resolved')."
+    },
+    "participants": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "GitHub usernames of participants."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": [],
+      "description": "Free-form labels for discovery and filtering."
+    }
+  }
+}
