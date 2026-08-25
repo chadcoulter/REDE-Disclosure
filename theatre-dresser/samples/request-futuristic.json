@@ -1,0 +1,5 @@
+{
+  "context": "operations",
+  "prompt": "make it feel futuristic and high-energy — dark background, electric neon accents, tight spacing, sharp edges, fast transitions",
+  "baseCss": ":root { --accent: #4f46e5; --background: #ffffff; --surface: #f9fafb; --text: #111827; --border: #e5e7eb; }"
+}
