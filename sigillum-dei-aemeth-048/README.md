@@ -1,12 +1,21 @@
-Original Reddit source: https://www.reddit.com/r/GhostMesh48/s/Ms3ICbMgXr
+# Source capture metadata
 
-Original post image: https://preview.redd.it/they-built-a-recursion-machine-in-1582-and-called-it-a-seal-v0-xkjkcwffmkqh1.png?auto=webp&crop=smart&s=57bc2f553ede5182f23876b75ad22c8d200a19e7&width=640
+- **Original Reddit share URL:** https://www.reddit.com/r/GhostMesh48/s/Ms3ICbMgXr
+- **Canonical Reddit permalink:** https://www.reddit.com/r/GhostMesh48/comments/1wl2k5z/they_built_a_recursion_machine_in_1582_and_called/
+- **Subreddit:** r/GhostMesh48
+- **Author:** u/Mikey-506
+- **Post ID:** 1wl2k5z
+- **Reddit displayed age at capture:** 9h ago
+- **Original direct image:** https://i.redd.it/xkjkcwffmkqh1.png
+- **Archived local image:** [post-image.png](./post-image.png)
+- **Captured:** 2026-09-20
+- **Scope:** Original submission only. Comments are intentionally excluded.
 
 ---
 
 # They built a recursion machine in 1582 and called it a seal 😂
 
-![Original Reddit post image](https://preview.redd.it/they-built-a-recursion-machine-in-1582-and-called-it-a-seal-v0-xkjkcwffmkqh1.png?auto=webp&crop=smart&s=57bc2f553ede5182f23876b75ad22c8d200a19e7&width=640)
+![Original Reddit post image](./post-image.png)
 
 # ARCHIVE ENTRY 048 // SIGILLUM DEI AEMETH
 
