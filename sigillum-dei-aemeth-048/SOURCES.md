@@ -162,3 +162,53 @@ For this project:
 - source provenance and later interpretation remain separate;
 - comments from the Reddit thread are not part of the capture;
 - future historical reconstruction should append newly used sources to this ledger rather than silently folding them into the source artifact.
+
+
+---
+
+## 7. AAOTH → Mercury → Hod → Aaron correspondence chain
+
+This connection was identified while resolving the historical/computational mapping for the class-library design.
+
+### AAOTH → Mercury
+
+The 1946 *Round Robin* table assigns **Aaoth** to **Mercury**:
+
+https://borderlandsciences.org/journal/vol/02/n10/Sigillum_Dei_AEmeth.html
+
+**Used for:** the first edge in the transform chain.
+
+### Mercury → Hod
+
+David Richard Jones notes the standard Hermetic-Qabalistic attribution of **Mercury to Hod**:
+
+https://hermetic.com/jones/on-the-formulae-of-the-unicursal-hexagram
+
+Aaron J. Leitch likewise describes **Hod as the sphere of Mercury**:
+
+https://www.jwmt.org/v2n13/doc.html
+
+**Used for:** the planetary-to-sephirah transform.
+
+### Hod → Aaron
+
+A modern Kabbalistic correspondence source explicitly associates **Hod with Aharon/Aaron**:
+
+https://ifdawn.com/esa/hod.htm
+
+A Zohar translation published in *The Word* also preserves the older pairing in which **Moses corresponds with Netzach and Aaron with Hod**:
+
+https://iapsop.com/archive/materials/word_percival/word_v6_oct_1907-mar_1908.pdf
+
+**Used for:** the sephirah-to-biblical-archetype transform.
+
+### Resulting transform
+
+```text
+AAOTH
+  → Mercury
+  → Hod
+  → Aaron
+```
+
+This should be modeled as a provenance-preserving correspondence chain rather than as a direct spelling transformation.
